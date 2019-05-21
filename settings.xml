@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <project>
+
+        <settings>
+            <config>
+                <section name="WebsiteLocker">
+                    <conf name="locked">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="passwd">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                </section>
+            </config>
+
+
+            <window>
+                <categories>
+                    <category name="website-locker">
+                        <text><locale group="quiqqer/website-locker" var="settings.title"/></text>
+                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+
+                        <settings title="settings.general" name="settings.general">
+                            <title>
+                                <locale group="quiqqer/website-locker" var="settings.general"/>
+                            </title>
+                            <input conf="WebsiteLocker.locked" type="checkbox">
+                                <text><locale group="quiqqer/website-locker" var="settings.locked"/></text>
+                            </input>
+
+                            <input conf="WebsiteLocker.passwd" type="text">
+                                <text><locale group="quiqqer/website-locker" var="settings.passwd"/></text>
+                            </input>
+                        </settings>
+                    </category>
+                </categories>
+
+            </window>
+        </settings>
+
+    </project>
+</quiqqer>

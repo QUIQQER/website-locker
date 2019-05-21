@@ -1,0 +1,160 @@
+<html lang="en">
+<head>
+<title></title>
+<meta name="robots" content="noindex" />
+<meta name="googlebot" content="noindex" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1"/>
+
+<script src="{URL_OPT_DIR}quiqqer/website-locker/bin/dat.gui.min.js"></script>
+
+{literal}
+<script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};
+    ga.l=+new Date;
+</script>
+
+<style>
+    * {
+        user-select: none;
+    }
+
+    html, body {
+        overflow: hidden;
+    }
+
+    body {
+        margin: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .dg {
+        opacity: 0.9;
+    }
+
+    .dg .property-name {
+        overflow: visible;
+    }
+
+    @font-face {
+        font-family: 'iconfont';
+        src: url('iconfont.ttf') format('truetype');
+    }
+
+    .bigFont {
+        font-size: 150%;
+        color: #8C8C8C;
+    }
+
+    .cr.function.appBigFont {
+        font-size: 150%;
+        line-height: 27px;
+        background-color: #2F4F4F;
+    }
+
+    .cr.function.appBigFont .property-name {
+        float: none;
+    }
+
+    .cr.function.appBigFont .icon {
+        position: sticky;
+        bottom: 27px;
+    }
+
+    .icon {
+        font-family: 'iconfont';
+        font-size: 130%;
+        float: right;
+    }
+
+    .twitter:before {
+        content: 'a';
+    }
+
+    .github:before {
+        content: 'b';
+    }
+
+    .app:before {
+        content: 'c';
+    }
+
+    .discord:before {
+        content: 'd';
+    }
+
+    .dg.main.a{
+        display:none;
+    }
+
+    .frame {
+        position: relative;
+    }
+
+    .login-container {
+        background: rgba(255, 255, 255, 0.8);
+        height: 300px;
+        width: 500px;
+        position: absolute;
+        top: calc(50% - 150px);
+        left: calc(50% - 250px);
+    }
+
+    .login-container form{
+        height: 100%;
+        width: 100%;
+    }
+
+    .login-container form label{
+        font-family: monospace;
+        color: #484848;
+        display: block;
+        font-size: 3em;
+        font-weight: bold;
+        padding: 20px;
+        margin-top: 30px;
+        text-align:center;
+    }
+
+    .login-container form #locker-pwd{
+        width: 80%;
+        height: 30px;
+        padding: 20px;
+        margin: 0px auto;
+        margin-top: 40px;
+        display:block;
+    }
+
+    .login-container form input[type="submit"]{
+        display:block;
+        margin: 20px auto;
+        height: 30px;
+        width: 30%;
+    }
+
+</style>
+{/literal}
+
+
+</head>
+<body>
+<canvas></canvas>
+<script src="{URL_OPT_DIR}quiqqer/website-locker/bin/script.js"></script>
+
+<div class="login-container">
+    <form action="{$url_path}">
+        <label for="locker-pwd">Passwort:</label>
+        <input id="locker-pwd" type="text" />
+        <input type="submit">
+    </form>
+</div>
+
+
+</body>
+</html>

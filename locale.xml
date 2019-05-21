@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/website-locker" datatype="php">
+        <locale name="settings.title">
+            <de><![CDATA[Website-Locker]]></de>
+            <en><![CDATA[Website-Locker]]></en>
+        </locale>
+
+        <locale name="settings.general">
+            <de><![CDATA[Generelle Einstellungen]]></de>
+            <en><![CDATA[General Settings]]></en>
+        </locale>
+
+        <locale name="settings.locked">
+            <de><![CDATA[Projekt Verschlossen]]></de>
+            <en><![CDATA[Project locked]]></en>
+        </locale>
+
+        <locale name="settings.passwd">
+            <de><![CDATA[Passwort]]></de>
+            <en><![CDATA[Password]]></en>
+        </locale>
+    </groups>
+</locales>
