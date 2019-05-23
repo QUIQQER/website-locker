@@ -11,6 +11,16 @@
                     <conf name="passwd">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="locked">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="interactiveBackground">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+
+                    <conf name="backgroundColor">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -31,6 +41,14 @@
 
                             <input conf="WebsiteLocker.passwd" type="text">
                                 <text><locale group="quiqqer/website-locker" var="settings.passwd"/></text>
+                            </input>
+
+                            <input conf="WebsiteLocker.passwd" type="checkbox">
+                                <text><locale group="quiqqer/website-locker" var="settings.interactiveBackground"/></text>
+                            </input>
+
+                            <input conf="WebsiteLocker.backgroundColor" type="color">
+                                <text><locale group="quiqqer/website-locker" var="settings.backgroundColor"/></text>
                             </input>
                         </settings>
                     </category>

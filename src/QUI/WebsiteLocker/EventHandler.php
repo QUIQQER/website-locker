@@ -47,9 +47,13 @@ class EventHandler
 
         }
 
+        Log::writeRecursive($conf);
+
         $Response = QUI::getGlobalResponse();
         $Control  = new WebsiteLocker([
-            'url_path' => $url
+            'url_path' => $url,
+            'backgroundColor' => '',
+            'interactiveBackground' => ''
         ]);
 
         $Response->setStatusCode(Response::HTTP_UNAUTHORIZED);

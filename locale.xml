@@ -20,5 +20,15 @@
             <de><![CDATA[Passwort]]></de>
             <en><![CDATA[Password]]></en>
         </locale>
+
+        <locale name="settings.interactiveBackground">
+            <de><![CDATA[Interaktiver Hintergrund]]></de>
+            <en><![CDATA[Interactive Background]]></en>
+        </locale>
+
+        <locale name="settings.backgroundColor">
+            <de><![CDATA[Hintergrundfarbe]]></de>
+            <en><![CDATA[Backgroundcolor]]></en>
+        </locale>
     </groups>
 </locales>
