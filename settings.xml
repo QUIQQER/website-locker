@@ -6,18 +6,14 @@
             <config>
                 <section name="WebsiteLocker">
                     <conf name="locked">
-                        <type><![CDATA[string]]></type>
+                        <type><![CDATA[bool]]></type>
                     </conf>
                     <conf name="passwd">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="locked">
-                        <type><![CDATA[string]]></type>
-                    </conf>
                     <conf name="interactiveBackground">
-                        <type><![CDATA[string]]></type>
+                        <type><![CDATA[bool]]></type>
                     </conf>
-
                     <conf name="backgroundColor">
                         <type><![CDATA[string]]></type>
                     </conf>
