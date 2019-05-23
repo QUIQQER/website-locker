@@ -5,14 +5,20 @@
 <meta name="googlebot" content="noindex" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1,maximum-scale=1"/>
 
-<script src="{URL_OPT_DIR}quiqqer/website-locker/bin/dat.gui.min.js"></script>
+<script src="{URL_OPT_DIR}quiqqer/website-locker/bin/dat.gui.min.js" ></script>
 
 {literal}
 <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};
     ga.l=+new Date;
 </script>
+{/literal}
 
+<script>    console.log('{$interactiveBackground}');
+</script>
+
+{if $interactiveBackground}
+{literal}
 <style>
     * {
         user-select: none;
@@ -96,6 +102,12 @@
     .frame {
         position: relative;
     }
+</style>
+{/literal}
+{/if}
+
+{literal}
+<style>
 
     .login-container {
         background: rgba(255, 255, 255, 0.8);
@@ -139,13 +151,15 @@
     }
 
 </style>
-{/literal}
 
+{/literal}
 
 </head>
 <body>
+{if $interactiveBackground}
 <canvas></canvas>
 <script src="{URL_OPT_DIR}quiqqer/website-locker/bin/script.js"></script>
+{/if}
 
 <div class="login-container">
     <form action="{$url_path}">

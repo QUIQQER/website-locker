@@ -18,7 +18,6 @@ class WebsiteLocker extends \QUI\Control
      */
     public function __construct(array $attributes = [])
     {
-        Log::writeRecursive($attributes);
 //        $this->setAttributes([
 //
 //        ]);
@@ -48,7 +47,9 @@ class WebsiteLocker extends \QUI\Control
         }
 
         $Engine->assign([
-            'url_path' => $path
+            'url_path' => $path,
+            'interactiveBackground' => $this->getAttribute('interactiveBackground'),
+            'backgroundColor' => $this->getAttribute('backgroundColor')
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/WebsiteLocker.html');
