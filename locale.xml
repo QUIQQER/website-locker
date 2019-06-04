@@ -30,5 +30,15 @@
             <de><![CDATA[Hintergrundfarbe]]></de>
             <en><![CDATA[Backgroundcolor]]></en>
         </locale>
+
+        <locale name="settings.title">
+            <de><![CDATA[Website-Locker]]></de>
+            <en><![CDATA[Website-Locker]]></en>
+        </locale>
+
+        <locale name="label.password">
+            <de><![CDATA[Passwort]]></de>
+            <en><![CDATA[Password]]></en>
+        </locale>
     </groups>
 </locales>
