@@ -41,17 +41,20 @@ class EventHandler
             return;
         }
 
-        if (isset($_REQUEST['website-locker-pass'])) {
+        if (isset($_REQUEST['website-locker-pass'])
+            && $_REQUEST['website-locker-pass'] === $conf['WebsiteLocker.passwd']) {
             // login
+            QUI::getSession()->set('website-locker-pass', $_REQUEST['website-locker-pass']);
 
-
+            return;
         }
 
         $Response = QUI::getGlobalResponse();
-        $Control  = new WebsiteLocker([
-            'url_path' => $url,
+
+        $Control = new WebsiteLocker([
+            'url_path'              => $url,
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
-            'backgroundColor' => $conf['WebsiteLocker.backgroundColor']
+            'backgroundColor'       => $conf['WebsiteLocker.backgroundColor']
         ]);
 
         $Response->setStatusCode(Response::HTTP_UNAUTHORIZED);
