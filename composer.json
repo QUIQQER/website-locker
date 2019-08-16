@@ -3,7 +3,7 @@
   "type": "quiqqer-module",
   "description": "This module allows you to block frontend access to your project behind password protection. Among other things, you can use it to block crawlers from search engines.",
   "version": "dev-dev",
-  "license": "",
+  "license": "GPL-3.0+",
   "authors": [
     {
       "name": "Gerd Krause",
