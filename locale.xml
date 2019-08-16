@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <locales>
     <groups name="quiqqer/website-locker" datatype="php">
+
+        <locale name="package.title">
+            <de><![CDATA[Website-Locker]]></de>
+            <en><![CDATA[Website-Locker]]></en>
+        </locale>
+
+        <locale name="package.description">
+            <de><![CDATA[Dieses Modul erlaubt Ihnen den Frontend-Zugriff auf Ihr Projekt hinter einem Passwortschutz zu sperren. Nutzen Sie es unter anderem um Crawler von Suchmaschinen auszusperren.]]></de>
+            <en><![CDATA[This module allows you to block frontend access to your project behind password protection. Among other things, you can use it to block crawlers from search engines.]]></en>
+        </locale>
+
         <locale name="settings.title">
             <de><![CDATA[Website-Locker]]></de>
             <en><![CDATA[Website-Locker]]></en>
