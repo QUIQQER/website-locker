@@ -95,10 +95,6 @@
                 content: 'd';
             }
 
-            .dg.main.a {
-                display: none;
-            }
-
             .frame {
                 position: relative;
             }
@@ -121,6 +117,8 @@
             position: absolute;
             top: calc(50% - 150px);
             left: calc(50% - 250px);
+            border: 1px solid black;
+            border-radius: 20px;
         }
 
         .login-container form {
@@ -175,6 +173,9 @@
     </form>
 </div>
 
-
+<script>
+    var elm = document.querySelector('.close-button');
+    elm.click();
+</script>
 </body>
 </html>
