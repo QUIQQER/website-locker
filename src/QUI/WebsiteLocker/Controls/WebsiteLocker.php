@@ -42,7 +42,8 @@ class WebsiteLocker extends \QUI\Control
             'url_path'              => $path,
             'interactiveBackground' => $this->getAttribute('interactiveBackground'),
             'backgroundColor'       => $this->getAttribute('backgroundColor'),
-            'backgroundImage'       => $this->getAttribute('backgroundImage')
+            'backgroundImage'       => $this->getAttribute('backgroundImage'),
+            'placeholder'           => $this->getAttribute('placeholder')
         ]);
 
         return $Engine->fetch(dirname(__FILE__).'/WebsiteLocker.html');

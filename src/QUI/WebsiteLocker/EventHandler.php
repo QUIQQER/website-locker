@@ -51,11 +51,16 @@ class EventHandler
 
         $Response = QUI::getGlobalResponse();
 
+        if (!isset($conf['WebsiteLocker.placeholder'])) {
+            $conf['WebsiteLocker.placeholder'] = '';
+        }
+
         $Control = new WebsiteLocker([
             'url_path'              => $url,
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
             'backgroundColor'       => $conf['WebsiteLocker.backgroundColor'],
-            'backgroundImage'       => $conf['WebsiteLocker.backgroundImage']
+            'backgroundImage'       => $conf['WebsiteLocker.backgroundImage'],
+            'placeholder'           => $conf['WebsiteLocker.placeholder']
         ]);
 
         $Response->setStatusCode(Response::HTTP_UNAUTHORIZED);

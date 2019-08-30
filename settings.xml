@@ -20,6 +20,9 @@
                     <conf name="backgroundImage">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="placeholder">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -53,6 +56,10 @@
                                 <text>
                                     <locale group="quiqqer/website-locker" var="settings.backgroundImage"/>
                                 </text>
+                            </input>
+
+                            <input conf="WebsiteLocker.placeholder" type="text">
+                                <text><locale group="quiqqer/website-locker" var="settings.placeholder"/></text>
                             </input>
                         </settings>
                     </category>
