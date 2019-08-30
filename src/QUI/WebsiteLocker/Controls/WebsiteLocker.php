@@ -18,15 +18,7 @@ class WebsiteLocker extends \QUI\Control
      */
     public function __construct(array $attributes = [])
     {
-//        $this->setAttributes([
-//
-//        ]);
-
         parent::__construct($attributes);
-
-        $this->setAttributes([
-//            'data-qui' => 'package/pcsg-projects/FEVES/bin/controls/ContractList'
-        ]);
     }
 
     /**
@@ -42,17 +34,17 @@ class WebsiteLocker extends \QUI\Control
 
         $path = $this->getAttribute('url_path');
 
-        if(empty($path)){
+        if (empty($path)) {
             $path = '/';
         }
 
         $Engine->assign([
-            'url_path' => $path,
+            'url_path'              => $path,
             'interactiveBackground' => $this->getAttribute('interactiveBackground'),
-            'backgroundColor' => $this->getAttribute('backgroundColor')
+            'backgroundColor'       => $this->getAttribute('backgroundColor'),
+            'backgroundImage'       => $this->getAttribute('backgroundImage')
         ]);
 
-        return $Engine->fetch(dirname(__FILE__) . '/WebsiteLocker.html');
+        return $Engine->fetch(dirname(__FILE__).'/WebsiteLocker.html');
     }
-
 }
