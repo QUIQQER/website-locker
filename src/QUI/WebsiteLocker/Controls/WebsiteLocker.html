@@ -100,6 +100,13 @@
             }
         </style>
         {/literal}
+    {elseif backgroundImage}
+        <style>
+            body {
+            background-image: url({$backgroundImage});
+            background-repeat: round;
+            }
+        </style>
     {else}
         <style>
             body {

@@ -54,7 +54,8 @@ class EventHandler
         $Control = new WebsiteLocker([
             'url_path'              => $url,
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
-            'backgroundColor'       => $conf['WebsiteLocker.backgroundColor']
+            'backgroundColor'       => $conf['WebsiteLocker.backgroundColor'],
+            'backgroundImage'       => $conf['WebsiteLocker.backgroundImage']
         ]);
 
         $Response->setStatusCode(Response::HTTP_UNAUTHORIZED);

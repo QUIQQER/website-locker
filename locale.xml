@@ -42,6 +42,11 @@
             <en><![CDATA[Backgroundcolor]]></en>
         </locale>
 
+        <locale name="settings.backgroundImage">
+            <de><![CDATA[Hintergrundbild]]></de>
+            <en><![CDATA[Backgroundpicture]]></en>
+        </locale>
+
         <locale name="settings.title">
             <de><![CDATA[Website-Locker]]></de>
             <en><![CDATA[Website-Locker]]></en>

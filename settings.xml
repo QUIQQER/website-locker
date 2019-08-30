@@ -17,6 +17,9 @@
                     <conf name="backgroundColor">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="backgroundImage">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -44,6 +47,12 @@
 
                             <input conf="WebsiteLocker.backgroundColor" type="color">
                                 <text><locale group="quiqqer/website-locker" var="settings.backgroundColor"/></text>
+                            </input>
+
+                            <input conf="WebsiteLocker.backgroundImage" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/website-locker" var="settings.backgroundImage"/>
+                                </text>
                             </input>
                         </settings>
                     </category>
