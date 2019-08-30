@@ -47,6 +47,11 @@
             <en><![CDATA[Backgroundpicture]]></en>
         </locale>
 
+        <locale name="settings.placeholder">
+            <de><![CDATA[Platzhaltertext]]></de>
+            <en><![CDATA[Placeholdertext]]></en>
+        </locale>
+
         <locale name="settings.title">
             <de><![CDATA[Website-Locker]]></de>
             <en><![CDATA[Website-Locker]]></en>
