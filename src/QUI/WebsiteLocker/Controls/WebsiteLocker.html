@@ -100,14 +100,18 @@
             }
         </style>
         {/literal}
-    {elseif backgroundImage}
+    {/if}
+
+    {if $backgroundImage}
         <style>
             body {
             background-image: url({$backgroundImage});
             background-repeat: round;
             }
         </style>
-    {else}
+    {/if}
+
+    {if $backgroundColor && empty($backgroundImage)}
         <style>
             body {
                 background-color: {$backgroundColor};
