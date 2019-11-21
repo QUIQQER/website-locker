@@ -30,7 +30,7 @@
                 <categories>
                     <category name="website-locker">
                         <text><locale group="quiqqer/website-locker" var="settings.title"/></text>
-                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+                        <icon>fa fa-lock</icon>
 
                         <settings title="settings.general" name="settings.general">
                             <title>
