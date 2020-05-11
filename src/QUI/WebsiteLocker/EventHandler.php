@@ -56,7 +56,6 @@ class EventHandler
         }
 
         $Control = new WebsiteLocker([
-            'url_path'              => $url,
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
             'backgroundColor'       => $conf['WebsiteLocker.backgroundColor'],
             'backgroundImage'       => $conf['WebsiteLocker.backgroundImage'],
