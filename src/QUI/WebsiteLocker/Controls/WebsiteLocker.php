@@ -32,14 +32,7 @@ class WebsiteLocker extends \QUI\Control
             return '';
         }
 
-        $path = $this->getAttribute('url_path');
-
-        if (empty($path)) {
-            $path = '/';
-        }
-
         $Engine->assign([
-            'url_path'              => $path,
             'interactiveBackground' => $this->getAttribute('interactiveBackground'),
             'backgroundColor'       => $this->getAttribute('backgroundColor'),
             'backgroundImage'       => $this->getAttribute('backgroundImage'),
