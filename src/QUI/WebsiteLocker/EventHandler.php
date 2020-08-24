@@ -67,4 +67,58 @@ class EventHandler
         $Response->send();
         exit;
     }
+
+    /**
+     * @param QUI\Template $Template
+     * @param QUI\Projects\Site $Site
+     */
+    public static function onSiteStart()
+    {
+        try {
+            $Site = QUI::getRewrite()->getSite();
+        } catch (QUI\Exception $Exception) {
+            Log::writeException($Exception);
+
+            return;
+        }
+
+        if (!$Site->getAttribute('quiqqer.website.locker.status')) {
+            return;
+        }
+
+        // password
+        $password = $Site->getAttribute('quiqqer.website.locker.password');
+
+        if (empty($password)) {
+            $conf = $Site->getProject()->getConfig();
+
+            if (empty($conf['WebsiteLocker.locked'])) {
+                return;
+            }
+
+            $password = $conf['WebsiteLocker.locked'];
+        }
+
+        // password input
+        if (isset($_POST['site-lock-'.$Site->getId()])
+            && isset($_POST['password'])
+            && $_POST['password'] == $password
+        ) {
+            QUI::getSession()->set('website-locker-pass-'.$Site->getId(), $password);
+        }
+
+        // password
+        if (QUI::getSession()->get('website-locker-pass-'.$Site->getId()) === $password) {
+            return;
+        }
+
+        $Control = new QUI\WebsiteLocker\Controls\SiteLock([
+            'title'       => $Site->getAttribute('quiqqer.website.locker.title'),
+            'description' => $Site->getAttribute('quiqqer.website.locker.description'),
+            'Site'        => $Site
+        ]);
+
+        echo $Control->create();
+        exit;
+    }
 }

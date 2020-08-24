@@ -8,8 +8,10 @@
         </locale>
 
         <locale name="package.description">
-            <de><![CDATA[Dieses Modul erlaubt Ihnen den Frontend-Zugriff auf Ihr Projekt hinter einem Passwortschutz zu sperren. Nutzen Sie es unter anderem um Crawler von Suchmaschinen auszusperren.]]></de>
-            <en><![CDATA[This module allows you to block frontend access to your project behind password protection. Among other things, you can use it to block crawlers from search engines.]]></en>
+            <de>
+                <![CDATA[Dieses Modul erlaubt Ihnen den Frontend-Zugriff auf Ihr Projekt hinter einem Passwortschutz zu sperren. Nutzen Sie es unter anderem um Crawler von Suchmaschinen auszusperren.]]></de>
+            <en>
+                <![CDATA[This module allows you to block frontend access to your project behind password protection. Among other things, you can use it to block crawlers from search engines.]]></en>
         </locale>
 
         <locale name="settings.title">
@@ -60,6 +62,27 @@
         <locale name="label.password">
             <de><![CDATA[Passwort]]></de>
             <en><![CDATA[Password]]></en>
+        </locale>
+
+        <locale name="website-locker.siteSettings">
+            <de><![CDATA[Seiten-Lock]]></de>
+            <en><![CDATA[Site Lock]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.status">
+            <de><![CDATA[Seite mit Passwort schützen]]></de>
+            <en><![CDATA[Protect page with password]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.password">
+            <de><![CDATA[Passwort]]></de>
+            <en><![CDATA[Password]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.title">
+            <de><![CDATA[Passwort Titel]]></de>
+            <en><![CDATA[Password title]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.description">
+            <de><![CDATA[Passwort Text]]></de>
+            <en><![CDATA[Password text]]></en>
         </locale>
     </groups>
 </locales>
