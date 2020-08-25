@@ -18,9 +18,17 @@ class SiteLock extends QUI\Control
      */
     public function __construct(array $attributes = [])
     {
+        // defaults
+        $this->setAttributes([
+            'title'           => false,
+            'description'     => false,
+            'Site'            => false,
+            'backgroundImage' => false
+        ]);
+
         parent::__construct($attributes);
 
-        $this->addCSSFile(dirname(__FILE__).'SiteLock.css');
+        $this->addCSSFile(\dirname(__FILE__).'SiteLock.css');
     }
 
     /**
@@ -37,11 +45,16 @@ class SiteLock extends QUI\Control
         $Site    = $this->getSite();
         $Project = $Site->getProject();
         $logo    = '';
+        $bgImage = $this->getAttribute('backgroundImage');
 
         $Logo = $Project->getMedia()->getLogoImage();
 
         if ($Logo) {
             $logo = '<img src="'.$Logo->getSizeCacheUrl(300, 100).'" class="logo" />';
+        }
+
+        if (!empty($bgImage)) {
+            $Engine->assign('backgroundImage', $this->getAttribute('backgroundImage'));
         }
 
         $Engine->assign([
@@ -51,7 +64,7 @@ class SiteLock extends QUI\Control
             'logo'        => $logo
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/SiteLock.html');
+        return $Engine->fetch(\dirname(__FILE__).'/SiteLock.html');
     }
 
     /**

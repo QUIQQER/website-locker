@@ -33,7 +33,7 @@
         }
 
         .card {
-            background: #fff;
+            background-color: #fff;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 40, 100, 0.12);
             border-radius: 3px;
@@ -94,10 +94,21 @@
             margin-top: 1.5rem;
         }
     </style>
+
+    {if isset($backgroundImage) && $backgroundImage}
+    <style>
+        body {
+            background-image: url('{image src=$backgroundImage width=1600 onlysrc=true}');
+            background-size: cover;
+            min-height: 100vh;
+            margin: 0;
+            background-repeat: no-repeat;
+        }
+    </style>
+    {/if}
 </head>
 <body>
 <div class="container">
-
     {$logo}
 
     <form name="site-lock" method="POST" class="card">
@@ -107,7 +118,9 @@
         <div class="card-description">{$description}</div>
 
         <label>
-            <span class="label-title">Password</span>
+            <span class="label-title">
+                {locale group="quiqqer/website-locker" var="website-locker.control.password"}
+            </span>
             <input type="password" name="password"/>
         </label>
 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <locales>
     <groups name="quiqqer/website-locker" datatype="php">
-
         <locale name="package.title">
             <de><![CDATA[Website-Locker]]></de>
             <en><![CDATA[Website-Locker]]></en>
@@ -83,6 +82,15 @@
         <locale name="website-locker.siteSettings.description">
             <de><![CDATA[Passwort Text]]></de>
             <en><![CDATA[Password text]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.background">
+            <de><![CDATA[Hintergrundbild]]></de>
+            <en><![CDATA[Background image]]></en>
+        </locale>
+
+        <locale name="website-locker.control.password">
+            <de><![CDATA[Passwort]]></de>
+            <en><![CDATA[Password]]></en>
         </locale>
     </groups>
 </locales>

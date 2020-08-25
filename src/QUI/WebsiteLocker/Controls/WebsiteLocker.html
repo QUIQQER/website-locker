@@ -114,8 +114,7 @@
     {if $backgroundImage}
         <style>
             body {
-            /*background-image: url({$backgroundImage});*/
-            background-image: url({image src=$backgroundImage width=1600 onlysrc=true});
+            background-image: url('{image src=$backgroundImage width=1600 onlysrc=true}');
             background-size: cover;
             min-height: 100vh;
             margin: 0;

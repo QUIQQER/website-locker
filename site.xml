@@ -5,6 +5,7 @@
         <attribute>quiqqer.website.locker.password</attribute>
         <attribute>quiqqer.website.locker.title</attribute>
         <attribute>quiqqer.website.locker.description</attribute>
+        <attribute>quiqqer.website.locker.background</attribute>
     </attributes>
 
     <settings>
@@ -39,6 +40,14 @@
                                 var="website-locker.siteSettings.description"/>
                     </text>
                 </textarea>
+                <input conf="quiqqer.website.locker.background"
+                       data-qui="controls/projects/project/media/Input"
+                >
+                    <text>
+                        <locale group="quiqqer/website-locker"
+                                var="website-locker.siteSettings.background"/>
+                    </text>
+                </input>
             </settings>
         </category>
     </settings>
