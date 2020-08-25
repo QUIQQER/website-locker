@@ -17,6 +17,12 @@
                     <conf name="backgroundColor">
                         <type><![CDATA[string]]></type>
                     </conf>
+                    <conf name="backgroundImage">
+                        <type><![CDATA[string]]></type>
+                    </conf>
+                    <conf name="placeholder">
+                        <type><![CDATA[string]]></type>
+                    </conf>
                 </section>
             </config>
 
@@ -24,7 +30,7 @@
                 <categories>
                     <category name="website-locker">
                         <text><locale group="quiqqer/website-locker" var="settings.title"/></text>
-                        <icon>URL_BIN_DIR/22x22/quiqqer.png</icon>
+                        <icon>fa fa-lock</icon>
 
                         <settings title="settings.general" name="settings.general">
                             <title>
@@ -44,6 +50,16 @@
 
                             <input conf="WebsiteLocker.backgroundColor" type="color">
                                 <text><locale group="quiqqer/website-locker" var="settings.backgroundColor"/></text>
+                            </input>
+
+                            <input conf="WebsiteLocker.backgroundImage" class="media-image">
+                                <text>
+                                    <locale group="quiqqer/website-locker" var="settings.backgroundImage"/>
+                                </text>
+                            </input>
+
+                            <input conf="WebsiteLocker.placeholder" type="text">
+                                <text><locale group="quiqqer/website-locker" var="settings.placeholder"/></text>
                             </input>
                         </settings>
                     </category>

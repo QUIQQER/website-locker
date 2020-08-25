@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+    <attributes>
+        <attribute>quiqqer.website.locker.status</attribute>
+        <attribute>quiqqer.website.locker.password</attribute>
+        <attribute>quiqqer.website.locker.title</attribute>
+        <attribute>quiqqer.website.locker.description</attribute>
+    </attributes>
+
+    <settings>
+        <category name="website-locker">
+            <settings>
+                <title>
+                    <locale group="quiqqer/website-locker"
+                            var="website-locker.siteSettings"/>
+                </title>
+
+                <input type="checkbox" conf="quiqqer.website.locker.status">
+                    <text>
+                        <locale group="quiqqer/website-locker"
+                                var="website-locker.siteSettings.status"/>
+                    </text>
+                </input>
+                <input conf="quiqqer.website.locker.password">
+                    <text>
+                        <locale group="quiqqer/website-locker"
+                                var="website-locker.siteSettings.password"/>
+                    </text>
+                </input>
+                <input conf="quiqqer.website.locker.title">
+                    <text>
+                        <locale group="quiqqer/website-locker"
+                                var="website-locker.siteSettings.title"/>
+                    </text>
+                </input>
+                <textarea conf="quiqqer.website.locker.description">
+                    <text>
+                        <locale group="quiqqer/website-locker"
+                                var="website-locker.siteSettings.description"/>
+                    </text>
+                </textarea>
+            </settings>
+        </category>
+    </settings>
+</site>

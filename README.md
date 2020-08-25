@@ -1,10 +1,10 @@
-![QUIQQER Website_Locker](bin/img/Readme.jpg)
+![QUIQQER Website_Locker](bin/images/Readme_WebsiteLocker.jpg)
 
 Website Locker
 ========
 
-Choose to lock frontend-access to your project behind password protection to 
-lock out search-engine-crawlers.
+This module allows you to block frontend access to your project behind password protection. 
+Among other things, you can use it to block crawlers from search engines.
 
 Package name:
 
@@ -41,4 +41,4 @@ We will try to respond to your request and forward it to the responsible develop
 Licence
 -------
 
-MIT
+GPL-3.0+
