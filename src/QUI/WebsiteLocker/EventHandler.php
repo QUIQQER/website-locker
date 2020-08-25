@@ -86,6 +86,8 @@ class EventHandler
             return;
         }
 
+        $Site->setAttribute('nocache', true);
+
         // password
         $password = $Site->getAttribute('quiqqer.website.locker.password');
 
