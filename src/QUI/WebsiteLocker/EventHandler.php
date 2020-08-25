@@ -121,7 +121,13 @@ class EventHandler
             'backgroundImage' => $Site->getAttribute('quiqqer.website.locker.background')
         ]);
 
-        echo $Control->create();
+
+        $Response = QUI::getGlobalResponse();
+        $Response->setContent($Control->create());
+        $Response->setStatusCode(Response::HTTP_FORBIDDEN);
+        $Response->prepare(QUI::getRequest());
+        $Response->send();
+
         exit;
     }
 }
