@@ -115,9 +115,10 @@ class EventHandler
         }
 
         $Control = new QUI\WebsiteLocker\Controls\SiteLock([
-            'title'       => $Site->getAttribute('quiqqer.website.locker.title'),
-            'description' => $Site->getAttribute('quiqqer.website.locker.description'),
-            'Site'        => $Site
+            'title'           => $Site->getAttribute('quiqqer.website.locker.title'),
+            'description'     => $Site->getAttribute('quiqqer.website.locker.description'),
+            'Site'            => $Site,
+            'backgroundImage' => $Site->getAttribute('quiqqer.website.locker.background')
         ]);
 
         echo $Control->create();
