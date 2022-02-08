@@ -9,6 +9,7 @@
 namespace QUI\WebsiteLocker\Controls;
 
 use QUI\System\Log;
+use QUI;
 
 class WebsiteLocker extends \QUI\Control
 {
@@ -32,13 +33,33 @@ class WebsiteLocker extends \QUI\Control
             return '';
         }
 
+        $Site    = $this->getSite();
+
         $Engine->assign([
+            'Site'                  => $Site,
+            'title'                 => $this->getAttribute('cardTitle'),
+            'description'           => $this->getAttribute('description'),
+            'logo'                  => $this->getAttribute('logo'),
             'interactiveBackground' => $this->getAttribute('interactiveBackground'),
             'backgroundColor'       => $this->getAttribute('backgroundColor'),
             'backgroundImage'       => $this->getAttribute('backgroundImage'),
             'placeholder'           => $this->getAttribute('placeholder')
         ]);
 
-        return $Engine->fetch(dirname(__FILE__).'/WebsiteLocker.html');
+        return $Engine->fetch(dirname(__FILE__) . '/WebsiteLocker.html');
+    }
+
+    /**
+     * Return the current site
+     *
+     * @return false|mixed|QUI\Projects\Site|null
+     */
+    public function getSite()
+    {
+        if ($this->getAttribute('Site')) {
+            return $this->getAttribute('Site');
+        }
+
+        return QUI::getRewrite()->getSite();
     }
 }

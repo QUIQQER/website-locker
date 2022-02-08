@@ -28,6 +28,16 @@
             <en><![CDATA[Project locked]]></en>
         </locale>
 
+        <locale name="settings.cardTitle">
+            <de><![CDATA[Passwort Titel]]></de>
+            <en><![CDATA[Password title]]></en>
+        </locale>
+
+        <locale name="settings.description">
+            <de><![CDATA[Passwort Text]]></de>
+            <en><![CDATA[Password text]]></en>
+        </locale>
+
         <locale name="settings.passwd">
             <de><![CDATA[Passwort]]></de>
             <en><![CDATA[Password]]></en>
@@ -41,6 +51,11 @@
         <locale name="settings.backgroundColor">
             <de><![CDATA[Hintergrundfarbe]]></de>
             <en><![CDATA[Backgroundcolor]]></en>
+        </locale>
+
+        <locale name="settings.logo">
+            <de><![CDATA[Logo]]></de>
+            <en><![CDATA[Logo]]></en>
         </locale>
 
         <locale name="settings.backgroundImage">

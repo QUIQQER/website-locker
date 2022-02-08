@@ -59,7 +59,10 @@ class EventHandler
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
             'backgroundColor'       => $conf['WebsiteLocker.backgroundColor'],
             'backgroundImage'       => $conf['WebsiteLocker.backgroundImage'],
-            'placeholder'           => $conf['WebsiteLocker.placeholder']
+            'placeholder'           => $conf['WebsiteLocker.placeholder'],
+            'cardTitle'             => $conf['WebsiteLocker.cardTitle'],
+            'description'           => $conf['WebsiteLocker.description'],
+            'logo'                  => $conf['WebsiteLocker.logo']
         ]);
 
         $Response->setStatusCode(Response::HTTP_UNAUTHORIZED);
@@ -102,15 +105,15 @@ class EventHandler
         }
 
         // password input
-        if (isset($_POST['site-lock-'.$Site->getId()])
+        if (isset($_POST['site-lock-' . $Site->getId()])
             && isset($_POST['password'])
             && $_POST['password'] == $password
         ) {
-            QUI::getSession()->set('website-locker-pass-'.$Site->getId(), $password);
+            QUI::getSession()->set('website-locker-pass-' . $Site->getId(), $password);
         }
 
         // password
-        if (QUI::getSession()->get('website-locker-pass-'.$Site->getId()) === $password) {
+        if (QUI::getSession()->get('website-locker-pass-' . $Site->getId()) === $password) {
             return;
         }
 
