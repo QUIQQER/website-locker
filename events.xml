@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
-    <event on="onRequest" fire="QUI\WebsiteLocker\EventHandler::onRequest"/>
+    <event on="onRequest" fire="QUI\WebsiteLocker\EventHandler::onRequest" priority="1"/>
     <event on="onStart" fire="QUI\WebsiteLocker\EventHandler::onSiteStart"/>
 </events>
