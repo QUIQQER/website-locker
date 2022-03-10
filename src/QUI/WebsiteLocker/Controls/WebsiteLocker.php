@@ -36,7 +36,7 @@ class WebsiteLocker extends \QUI\Control
         $Site        = $this->getSite();
         $title       = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.title');
         $description = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.description');
-        $plaeholder = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.placeholder');
+        $plaeholder  = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.placeholder');
 
         $Engine->assign([
             'Site'                  => $Site,
