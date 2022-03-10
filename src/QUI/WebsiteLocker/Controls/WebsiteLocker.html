@@ -19,6 +19,15 @@
 
     <style>
 
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
         html, body {
             height: 100%;
             font-family: sans-serif;
@@ -51,6 +60,7 @@
             padding: 2rem;
             margin: auto;
             max-width: 360px;
+            width: 100%;
             -webkit-box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, 0.7);
             -moz-box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, 0.7);
             box-shadow: 8px 8px 32px 0 rgba(0, 0, 0, 0.7);
@@ -59,8 +69,9 @@
 
         .card-title {
             font-size: 1.75rem;
-            font-weight: 300;
             margin: 0 0 1rem 0;
+            text-align: center;
+            line-height: 1.25;
         }
 
         .card-description {
@@ -158,9 +169,11 @@
     <div class="card">
         <form method="POST">
 
-            <div class="logo">
-                {image src=$logo width="300" height=100 loading="lazy" data-src="{$logo}"}
-            </div>
+            {if $logo}
+                <div class="logo">
+                    {image src=$logo width="300" height="100" loading="lazy" data-src="{$logo}"}
+                </div>
+            {/if}
 
             <input type="hidden" name="site-lock-{$Site->getId()}"/>
 
@@ -171,7 +184,7 @@
             <span class="label-title">
                 {locale group="quiqqer/website-locker" var="website-locker.control.password"}
             </span>
-                <input type="password" name="website-locker-pass"/>
+                <input type="password" name="website-locker-pass" placeholder="{$placeholder}"/>
             </label>
 
             <input type="submit" value="Submit"/>

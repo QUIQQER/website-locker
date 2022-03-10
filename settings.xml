@@ -8,12 +8,12 @@
                     <conf name="locked">
                         <type><![CDATA[bool]]></type>
                     </conf>
-                    <conf name="cardTitle">
-                        <type><![CDATA[string]]></type>
-                    </conf>
-                    <conf name="description">
-                        <type><![CDATA[string]]></type>
-                    </conf>
+<!--                    <conf name="cardTitle">-->
+<!--                        <type><![CDATA[string]]></type>-->
+<!--                    </conf>-->
+<!--                    <conf name="description">-->
+<!--                        <type><![CDATA[string]]></type>-->
+<!--                    </conf>-->
                     <conf name="passwd">
                         <type><![CDATA[string]]></type>
                     </conf>
@@ -29,9 +29,9 @@
                     <conf name="backgroundImage">
                         <type><![CDATA[string]]></type>
                     </conf>
-                    <conf name="placeholder">
-                        <type><![CDATA[string]]></type>
-                    </conf>
+<!--                    <conf name="placeholder">-->
+<!--                        <type><![CDATA[string]]></type>-->
+<!--                    </conf>-->
                 </section>
             </config>
 
@@ -53,17 +53,17 @@
                                 <text><locale group="quiqqer/website-locker" var="settings.passwd"/></text>
                             </input>
 
-                            <input conf="WebsiteLocker.cardTitle">
-                                <text>
-                                    <locale group="quiqqer/website-locker" var="settings.cardTitle"/>
-                                </text>
-                            </input>
+<!--                            <input conf="WebsiteLocker.cardTitle">-->
+<!--                                <text>-->
+<!--                                    <locale group="quiqqer/website-locker" var="settings.cardTitle"/>-->
+<!--                                </text>-->
+<!--                            </input>-->
 
-                            <textarea conf="WebsiteLocker.description">
-                                <text>
-                                    <locale group="quiqqer/website-locker" var="settings.description"/>
-                                </text>
-                            </textarea>
+<!--                            <textarea conf="WebsiteLocker.description">-->
+<!--                                <text>-->
+<!--                                    <locale group="quiqqer/website-locker" var="settings.description"/>-->
+<!--                                </text>-->
+<!--                            </textarea>-->
 
                             <input conf="WebsiteLocker.interactiveBackground" type="checkbox">
                                 <text><locale group="quiqqer/website-locker" var="settings.interactiveBackground"/></text>
@@ -85,9 +85,9 @@
                                 </text>
                             </input>
 
-                            <input conf="WebsiteLocker.placeholder" type="text">
-                                <text><locale group="quiqqer/website-locker" var="settings.placeholder"/></text>
-                            </input>
+<!--                            <input conf="WebsiteLocker.placeholder" type="text">-->
+<!--                                <text><locale group="quiqqer/website-locker" var="settings.placeholder"/></text>-->
+<!--                            </input>-->
                         </settings>
                     </category>
                 </categories>

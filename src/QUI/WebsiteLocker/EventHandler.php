@@ -59,9 +59,6 @@ class EventHandler
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
             'backgroundColor'       => $conf['WebsiteLocker.backgroundColor'],
             'backgroundImage'       => $conf['WebsiteLocker.backgroundImage'],
-            'placeholder'           => $conf['WebsiteLocker.placeholder'],
-            'cardTitle'             => $conf['WebsiteLocker.cardTitle'],
-            'description'           => $conf['WebsiteLocker.description'],
             'logo'                  => $conf['WebsiteLocker.logo']
         ]);
 
