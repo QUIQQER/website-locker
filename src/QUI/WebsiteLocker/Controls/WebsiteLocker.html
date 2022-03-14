@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="{$Project->getLang()}">
 <head>
     <title></title>
     <meta name="robots" content="noindex"/>
@@ -185,14 +185,14 @@
 
             <input type="hidden" name="site-lock-{$Site->getId()}"/>
 
-            <h1 class="card-title">{$title}</h1>
-            <div class="card-description">{$description}</div>
+            <h1 class="card-title">{locale group="quiqqer/website-locker" var="website-locker.title"}</h1>
+            <div class="card-description">{locale group="quiqqer/website-locker" var="website-locker.title"}</div>
 
             <label>
             <span class="label-title">
                 {locale group="quiqqer/website-locker" var="website-locker.control.password"}
             </span>
-                <input type="password" name="website-locker-pass" placeholder="{$placeholder}" autofocus/>
+                <input type="password" name="website-locker-pass" placeholder="{locale group='quiqqer/website-locker' var='website-locker.title'}" autofocus/>
             </label>
 
             <input type="submit" value="Submit"/>
