@@ -114,8 +114,8 @@
         </locale>
 
         <locale name="website-locker.description">
-            <de><![CDATA[Bitte geben Sie das Passwort ein, um den Inhalt der Website anzuzeigen]]></de>
-            <en><![CDATA[Please enter password to view the content of the site]]></en>
+            <de><![CDATA[Bitte geben Sie das Passwort ein, um den Inhalt der Website anzuzeigen.]]></de>
+            <en><![CDATA[Please enter password to view the content of the site.]]></en>
         </locale>
 
         <locale name="website-locker.placeholder">
