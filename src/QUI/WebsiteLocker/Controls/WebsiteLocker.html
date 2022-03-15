@@ -186,13 +186,13 @@
             <input type="hidden" name="site-lock-{$Site->getId()}"/>
 
             <h1 class="card-title">{locale group="quiqqer/website-locker" var="website-locker.title"}</h1>
-            <div class="card-description">{locale group="quiqqer/website-locker" var="website-locker.title"}</div>
+            <div class="card-description">{locale group="quiqqer/website-locker" var="website-locker.description"}</div>
 
             <label>
             <span class="label-title">
                 {locale group="quiqqer/website-locker" var="website-locker.control.password"}
             </span>
-                <input type="password" name="website-locker-pass" placeholder="{locale group='quiqqer/website-locker' var='website-locker.title'}" autofocus/>
+                <input type="password" name="website-locker-pass" placeholder="{locale group='quiqqer/website-locker' var='website-locker.placeholder'}" autofocus/>
             </label>
 
             <input type="submit" value="Submit"/>
