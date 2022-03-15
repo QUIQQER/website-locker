@@ -34,19 +34,13 @@ class WebsiteLocker extends \QUI\Control
         }
 
         $Site        = $this->getSite();
-        $title       = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.title');
-        $description = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.description');
-        $plaeholder  = \QUI::getLocale()->get('quiqqer/website-locker', 'website-locker.placeholder');
 
         $Engine->assign([
             'Site'                  => $Site,
-            'title'                 => $title,
-            'description'           => $description,
             'logo'                  => $this->getAttribute('logo'),
             'interactiveBackground' => $this->getAttribute('interactiveBackground'),
             'backgroundColor'       => $this->getAttribute('backgroundColor'),
             'backgroundImage'       => $this->getAttribute('backgroundImage'),
-            'placeholder'           => $plaeholder
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/WebsiteLocker.html');
