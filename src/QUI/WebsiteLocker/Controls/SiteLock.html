@@ -84,6 +84,11 @@
 
         .logo {
             margin-bottom: 1rem;
+            max-width: 300px;
+        }
+
+        .website-locker-logo {
+            text-align: center;
         }
 
         [type="submit"] {
@@ -109,9 +114,13 @@
 </head>
 <body>
 <div class="container">
-    {$logo}
 
     <form name="site-lock" method="POST" class="card">
+
+        <div class="website-locker-logo">
+            {$logo}
+        </div>
+
         <input type="hidden" name="site-lock-{$Site->getId()}"/>
 
         <h1 class="card-title">{$title}</h1>

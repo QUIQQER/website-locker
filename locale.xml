@@ -103,6 +103,15 @@
             <en><![CDATA[Background image]]></en>
         </locale>
 
+        <locale name="website-locker.control.title">
+            <de><![CDATA[Erforderliches Passwort]]></de>
+            <en><![CDATA[Required password]]></en>
+        </locale>
+        <locale name="website-locker.control.text">
+            <de><![CDATA[Bitte geben Sie Ihr Passwort ein]]></de>
+            <en><![CDATA[Please enter your password]]></en>
+        </locale>
+
         <locale name="website-locker.control.password">
             <de><![CDATA[Passwort]]></de>
             <en><![CDATA[Password]]></en>
