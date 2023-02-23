@@ -48,6 +48,7 @@ class SiteLock extends QUI\Control
         $bgImage     = $this->getAttribute('backgroundImage');
         $title       = $this->getAttribute('title');
         $description = $this->getAttribute('description');
+        $logoType    = $this->getSite()->getAttribute('quiqqer.website.locker.logo');
 
         if ($title == '') {
             $title = QUI::getLocale()->get(
@@ -63,10 +64,21 @@ class SiteLock extends QUI\Control
             );
         }
 
-        $Logo = $Project->getMedia()->getLogoImage();
+        if ($logoType === "projectLogo") {
+            $Logo = $Project->getMedia()->getLogoImage();
 
-        if ($Logo) {
-            $logo = '<img src="' . $Logo->getSizeCacheUrl(300, 100) . '" class="logo" />';
+            if ($Logo) {
+                $logo = '<img src="' . $Logo->getSizeCacheUrl(300, 100) . '" class="logo" />';
+            }
+
+        }
+
+        if ($logoType === "ownImage") {
+            $OwnImage = $this->getSite()->getAttribute('quiqqer.website.locker.ownImage');
+
+            if ($OwnImage) {
+                $logo = '<img src="' . $OwnImage . '" class="logo" />';
+            }
         }
 
         if (!empty($bgImage)) {
@@ -77,7 +89,8 @@ class SiteLock extends QUI\Control
             'Site'        => $Site,
             'title'       => $title,
             'description' => $description,
-            'logo'        => $logo
+            'logo'        => $logo,
+            'logoType'    => $logoType
         ]);
 
         return $Engine->fetch(\dirname(__FILE__) . '/SiteLock.html');

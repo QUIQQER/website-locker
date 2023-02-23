@@ -6,6 +6,8 @@
         <attribute>quiqqer.website.locker.title</attribute>
         <attribute>quiqqer.website.locker.description</attribute>
         <attribute>quiqqer.website.locker.background</attribute>
+        <attribute>quiqqer.website.locker.logo</attribute>
+        <attribute>quiqqer.website.locker.ownImage</attribute>
     </attributes>
 
     <settings>
@@ -47,6 +49,40 @@
                         <locale group="quiqqer/website-locker"
                                 var="website-locker.siteSettings.background"/>
                     </text>
+                </input>
+                <select conf="quiqqer.website.locker.logo">
+                    <title>
+                        <locale group="quiqqer/website-locker" var="website-locker.siteSettings.logo"/>
+                    </title>
+                    <select conf="menu.settings.type">
+                        <text>
+                            <locale group="quiqqer/website-locker" var="website-locker.siteSettings.logo.image"/>
+                        </text>
+                        <option value=""></option>
+                        <option value="projectLogo">
+                            <locale group="quiqqer/website-locker" var="website-locker.siteSettings.logo.projectLogo"/>
+                        </option>
+                        <option value="banIcon">
+                            <locale group="quiqqer/website-locker" var="website-locker.siteSettings.logo.banIcon"/>
+                        </option>
+                        <option value="lockIcon">
+                            <locale group="quiqqer/website-locker" var="website-locker.siteSettings.logo.lockIcon"/>
+                        </option>
+                        <option value="ownImage">
+                            <locale group="quiqqer/website-locker" var="website-locker.siteSettings.logo.ownImage"/>
+                        </option>
+                    </select>
+                </select>
+                <input conf="quiqqer.website.locker.ownImage"
+                       data-qui="controls/projects/project/media/Input"
+                >
+                    <text>
+                        <locale group="quiqqer/website-locker"
+                                var="website-locker.siteSettings.ownImage"/>
+                    </text>
+                    <description>
+                        <locale group="quiqqer/website-locker" var="website-locker.siteSettings.ownImage.desc"/>
+                    </description>
                 </input>
             </settings>
         </category>

@@ -102,6 +102,34 @@
             <de><![CDATA[Hintergrundbild]]></de>
             <en><![CDATA[Background image]]></en>
         </locale>
+        <locale name="website-locker.siteSettings.logo.image">
+            <de><![CDATA[Wählen Sie ein sichtbares Bild auf der Site-Sperre]]></de>
+            <en><![CDATA[Select a visible image on site lock]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.logo.projectLogo">
+            <de><![CDATA[Projekt-Logo]]></de>
+            <en><![CDATA[Project Logo]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.logo.banIcon">
+            <de><![CDATA[Verbotssymbol]]></de>
+            <en><![CDATA[Ban icon]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.logo.lockIcon">
+            <de><![CDATA[Schloss-Symbol]]></de>
+            <en><![CDATA[Lock icon]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.logo.ownImage">
+            <de><![CDATA[Eigenes Bild]]></de>
+            <en><![CDATA[Own image]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.ownImage">
+            <de><![CDATA[Eigenes Bild]]></de>
+            <en><![CDATA[Own image]]></en>
+        </locale>
+        <locale name="website-locker.siteSettings.ownImage.desc">
+            <de><![CDATA[Dieses Bild ist nur dann auf dem Seitenblocker sichtbar, wenn Sie es in der obigen Option als sichtbares Logo auswählen]]></de>
+            <en><![CDATA[This image will only be visible on the Site-Lock if you select it as the visible logo in the option above]]></en>
+        </locale>
 
         <locale name="website-locker.control.title">
             <de><![CDATA[Erforderliches Passwort]]></de>
