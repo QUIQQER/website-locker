@@ -70,7 +70,6 @@ class SiteLock extends QUI\Control
             if ($Logo) {
                 $logo = '<img src="' . $Logo->getSizeCacheUrl(300, 100) . '" class="logo" />';
             }
-
         }
 
         if ($logoType === "ownImage") {
