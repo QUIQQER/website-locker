@@ -28,7 +28,7 @@ class SiteLock extends QUI\Control
 
         parent::__construct($attributes);
 
-        $this->addCSSFile(\dirname(__FILE__).'SiteLock.css');
+        $this->addCSSFile(\dirname(__FILE__) . 'SiteLock.css');
     }
 
     /**
@@ -42,15 +42,42 @@ class SiteLock extends QUI\Control
             return '';
         }
 
-        $Site    = $this->getSite();
-        $Project = $Site->getProject();
-        $logo    = '';
-        $bgImage = $this->getAttribute('backgroundImage');
+        $Site        = $this->getSite();
+        $Project     = $Site->getProject();
+        $logo        = '';
+        $bgImage     = $this->getAttribute('backgroundImage');
+        $title       = $this->getAttribute('title');
+        $description = $this->getAttribute('description');
+        $logoType    = $this->getSite()->getAttribute('quiqqer.website.locker.logo');
 
-        $Logo = $Project->getMedia()->getLogoImage();
+        if ($title == '') {
+            $title = QUI::getLocale()->get(
+                'quiqqer/website-locker',
+                'website-locker.control.title'
+            );
+        }
 
-        if ($Logo) {
-            $logo = '<img src="'.$Logo->getSizeCacheUrl(300, 100).'" class="logo" />';
+        if ($description == '') {
+            $description = QUI::getLocale()->get(
+                'quiqqer/website-locker',
+                'website-locker.control.text'
+            );
+        }
+
+        if ($logoType === "projectLogo") {
+            $Logo = $Project->getMedia()->getLogoImage();
+
+            if ($Logo) {
+                $logo = '<img src="' . $Logo->getSizeCacheUrl(300, 100) . '" class="logo" />';
+            }
+        }
+
+        if ($logoType === "ownImage") {
+            $OwnImage = $this->getSite()->getAttribute('quiqqer.website.locker.ownImage');
+
+            if ($OwnImage) {
+                $logo = '<img src="' . $OwnImage . '" class="logo" />';
+            }
         }
 
         if (!empty($bgImage)) {
@@ -59,12 +86,13 @@ class SiteLock extends QUI\Control
 
         $Engine->assign([
             'Site'        => $Site,
-            'title'       => $this->getAttribute('title'),
-            'description' => $this->getAttribute('description'),
-            'logo'        => $logo
+            'title'       => $title,
+            'description' => $description,
+            'logo'        => $logo,
+            'logoType'    => $logoType
         ]);
 
-        return $Engine->fetch(\dirname(__FILE__).'/SiteLock.html');
+        return $Engine->fetch(\dirname(__FILE__) . '/SiteLock.html');
     }
 
     /**
