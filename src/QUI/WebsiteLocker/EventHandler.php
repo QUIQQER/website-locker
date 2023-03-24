@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class EventHandler
 {
+    protected static ?string $instanceLockPassword = null;
+
     /**
      * @param \QUI\Rewrite $Rewrite
      * @param string $url
@@ -130,4 +132,40 @@ class EventHandler
 
         exit;
     }
+
+    //region user login / logout
+
+    public static function onUserLogoutBegin(QUI\Interfaces\Users\User $User)
+    {
+        $password = QUI::getSession()->get('website-locker-pass');
+
+        if (!empty($password)) {
+            self::$instanceLockPassword = $password;
+        }
+    }
+
+    public static function onUserLoginStart()
+    {
+        $password = QUI::getSession()->get('website-locker-pass');
+
+        if (!empty($password)) {
+            self::$instanceLockPassword = $password;
+        }
+    }
+
+    public static function onUserLogout(QUI\Interfaces\Users\User $User)
+    {
+        if (!empty(self::$instanceLockPassword)) {
+            QUI::getSession()->set('website-locker-pass', self::$instanceLockPassword);
+        }
+    }
+
+    public static function onUserLogin()
+    {
+        if (!empty(self::$instanceLockPassword)) {
+            QUI::getSession()->set('website-locker-pass', self::$instanceLockPassword);
+        }
+    }
+
+    //endregion
 }
