@@ -103,41 +103,41 @@
             <en><![CDATA[Background image]]></en>
         </locale>
         <locale name="website-locker.siteSettings.logo.image">
-            <de><![CDATA[Wählen Sie ein sichtbares Bild auf der Site-Sperre]]></de>
-            <en><![CDATA[Select a visible image on site lock]]></en>
+            <de><![CDATA[Logo]]></de>
+            <en><![CDATA[Logo]]></en>
         </locale>
         <locale name="website-locker.siteSettings.logo.projectLogo">
             <de><![CDATA[Projekt-Logo]]></de>
             <en><![CDATA[Project Logo]]></en>
         </locale>
         <locale name="website-locker.siteSettings.logo.banIcon">
-            <de><![CDATA[Verbotssymbol]]></de>
-            <en><![CDATA[Ban icon]]></en>
+            <de><![CDATA[Icon: Ban]]></de>
+            <en><![CDATA[Icon: ban]]></en>
         </locale>
         <locale name="website-locker.siteSettings.logo.lockIcon">
-            <de><![CDATA[Schloss-Symbol]]></de>
-            <en><![CDATA[Lock icon]]></en>
+            <de><![CDATA[Icon: Schloss]]></de>
+            <en><![CDATA[Icon: lock]]></en>
         </locale>
         <locale name="website-locker.siteSettings.logo.ownImage">
-            <de><![CDATA[Eigenes Bild]]></de>
-            <en><![CDATA[Own image]]></en>
+            <de><![CDATA[Eigenes Bild - bitte unten auswählen]]></de>
+            <en><![CDATA[Your own image - please select below]]></en>
         </locale>
         <locale name="website-locker.siteSettings.ownImage">
-            <de><![CDATA[Eigenes Bild]]></de>
-            <en><![CDATA[Own image]]></en>
+            <de><![CDATA[Eigenes Bild als Logo]]></de>
+            <en><![CDATA[Own image as logo]]></en>
         </locale>
         <locale name="website-locker.siteSettings.ownImage.desc">
-            <de><![CDATA[Dieses Bild ist nur dann auf dem Seitenblocker sichtbar, wenn Sie es in der obigen Option als sichtbares Logo auswählen]]></de>
-            <en><![CDATA[This image will only be visible on the Site-Lock if you select it as the visible logo in the option above]]></en>
+            <de><![CDATA[Dieses Bild ist nur dann verwendet, wenn als Logo "Eigenes Bild" ausgewählt wird.]]></de>
+            <en><![CDATA[This image will only be used if you select "Own image" as logo in the option above]]></en>
         </locale>
 
         <locale name="website-locker.control.title">
-            <de><![CDATA[Erforderliches Passwort]]></de>
-            <en><![CDATA[Required password]]></en>
+            <de><![CDATA[Passwortschutz]]></de>
+            <en><![CDATA[Password protection]]></en>
         </locale>
         <locale name="website-locker.control.text">
-            <de><![CDATA[Bitte geben Sie Ihr Passwort ein]]></de>
-            <en><![CDATA[Please enter your password]]></en>
+            <de><![CDATA[Bitte geben Sie das Passwort ein, um den Inhalt der Website anzuzeigen.]]></de>
+            <en><![CDATA[Please enter password to view the content of the site.]]></en>
         </locale>
 
         <locale name="website-locker.control.password">
