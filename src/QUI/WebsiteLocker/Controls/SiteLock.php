@@ -3,6 +3,9 @@
 namespace QUI\WebsiteLocker\Controls;
 
 use QUI;
+use QUI\Exception;
+
+use function dirname;
 
 /**
  * Class SiteLock
@@ -20,35 +23,35 @@ class SiteLock extends QUI\Control
     {
         // defaults
         $this->setAttributes([
-            'title'           => false,
-            'description'     => false,
-            'Site'            => false,
+            'title' => false,
+            'description' => false,
+            'Site' => false,
             'backgroundImage' => false
         ]);
 
         parent::__construct($attributes);
 
-        $this->addCSSFile(\dirname(__FILE__) . 'SiteLock.css');
+        $this->addCSSFile(dirname(__FILE__) . 'SiteLock.css');
     }
 
     /**
      * @return string
      */
-    public function getBody()
+    public function getBody(): string
     {
         try {
-            $Engine = \QUI::getTemplateManager()->getEngine();
-        } catch (\QUI\Exception $Exception) {
+            $Engine = QUI::getTemplateManager()->getEngine();
+        } catch (Exception $Exception) {
             return '';
         }
 
-        $Site        = $this->getSite();
-        $Project     = $Site->getProject();
-        $logo        = '';
-        $bgImage     = $this->getAttribute('backgroundImage');
-        $title       = $this->getAttribute('title');
+        $Site = $this->getSite();
+        $Project = $Site->getProject();
+        $logo = '';
+        $bgImage = $this->getAttribute('backgroundImage');
+        $title = $this->getAttribute('title');
         $description = $this->getAttribute('description');
-        $logoType    = $this->getSite()->getAttribute('quiqqer.website.locker.logo');
+        $logoType = $this->getSite()->getAttribute('quiqqer.website.locker.logo');
 
         if ($title == '') {
             $title = QUI::getLocale()->get(
@@ -85,14 +88,14 @@ class SiteLock extends QUI\Control
         }
 
         $Engine->assign([
-            'Site'        => $Site,
-            'title'       => $title,
+            'Site' => $Site,
+            'title' => $title,
             'description' => $description,
-            'logo'        => $logo,
-            'logoType'    => $logoType
+            'logo' => $logo,
+            'logoType' => $logoType
         ]);
 
-        return $Engine->fetch(\dirname(__FILE__) . '/SiteLock.html');
+        return $Engine->fetch(dirname(__FILE__) . '/SiteLock.html');
     }
 
     /**

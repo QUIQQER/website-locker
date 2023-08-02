@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gerd
- * Date: 21.05.19
- * Time: 14:07
- */
 
 namespace QUI\WebsiteLocker\Controls;
 
-use QUI\System\Log;
 use QUI;
+use QUI\Control;
+use QUI\Exception;
 
-class WebsiteLocker extends \QUI\Control
+class WebsiteLocker extends Control
 {
     /**
      * ContractList constructor.
@@ -25,22 +20,22 @@ class WebsiteLocker extends \QUI\Control
     /**
      * @return string
      */
-    public function getBody()
+    public function getBody(): string
     {
         try {
-            $Engine = \QUI::getTemplateManager()->getEngine();
-        } catch (\QUI\Exception $Exception) {
+            $Engine = QUI::getTemplateManager()->getEngine();
+        } catch (Exception $Exception) {
             return '';
         }
 
-        $Site        = $this->getSite();
+        $Site = $this->getSite();
 
         $Engine->assign([
-            'Site'                  => $Site,
-            'logo'                  => $this->getAttribute('logo'),
+            'Site' => $Site,
+            'logo' => $this->getAttribute('logo'),
             'interactiveBackground' => $this->getAttribute('interactiveBackground'),
-            'backgroundColor'       => $this->getAttribute('backgroundColor'),
-            'backgroundImage'       => $this->getAttribute('backgroundImage'),
+            'backgroundColor' => $this->getAttribute('backgroundColor'),
+            'backgroundImage' => $this->getAttribute('backgroundImage'),
         ]);
 
         return $Engine->fetch(dirname(__FILE__) . '/WebsiteLocker.html');
@@ -50,6 +45,7 @@ class WebsiteLocker extends \QUI\Control
      * Return the current site
      *
      * @return false|mixed|QUI\Projects\Site|null
+     * @throws Exception
      */
     public function getSite()
     {
