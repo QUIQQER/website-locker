@@ -1,14 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gerd
- * Date: 21.05.19
- * Time: 12:26
- */
 
 namespace QUI\WebsiteLocker;
 
 use QUI;
+use QUI\Exception;
+use QUI\Rewrite;
 use QUI\System\Log;
 use QUI\WebsiteLocker\Controls\WebsiteLocker;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,16 +14,16 @@ class EventHandler
     protected static ?string $instanceLockPassword = null;
 
     /**
-     * @param \QUI\Rewrite $Rewrite
+     * @param Rewrite $Rewrite
      * @param string $url
      *
      * @return void
      */
-    public static function onRequest($Rewrite, $url)
+    public static function onRequest(Rewrite $Rewrite, string $url)
     {
         try {
             $conf = $Rewrite->getProject()->getConfig();
-        } catch (\QUI\Exception $Exception) {
+        } catch (Exception $Exception) {
             Log::writeException($Exception);
 
             return;
@@ -43,8 +39,10 @@ class EventHandler
             return;
         }
 
-        if (isset($_REQUEST['website-locker-pass'])
-            && $_REQUEST['website-locker-pass'] === $conf['WebsiteLocker.passwd']) {
+        if (
+            isset($_REQUEST['website-locker-pass'])
+            && $_REQUEST['website-locker-pass'] === $conf['WebsiteLocker.passwd']
+        ) {
             // login
             QUI::getSession()->set('website-locker-pass', $_REQUEST['website-locker-pass']);
 
@@ -59,9 +57,9 @@ class EventHandler
 
         $Control = new WebsiteLocker([
             'interactiveBackground' => $conf['WebsiteLocker.interactiveBackground'],
-            'backgroundColor'       => $conf['WebsiteLocker.backgroundColor'],
-            'backgroundImage'       => $conf['WebsiteLocker.backgroundImage'],
-            'logo'                  => $conf['WebsiteLocker.logo']
+            'backgroundColor' => $conf['WebsiteLocker.backgroundColor'],
+            'backgroundImage' => $conf['WebsiteLocker.backgroundImage'],
+            'logo' => $conf['WebsiteLocker.logo']
         ]);
 
         $Response->setStatusCode(Response::HTTP_UNAUTHORIZED);
@@ -71,14 +69,13 @@ class EventHandler
     }
 
     /**
-     * @param QUI\Template $Template
-     * @param QUI\Projects\Site $Site
+     * @throws Exception
      */
     public static function onSiteStart()
     {
         try {
             $Site = QUI::getRewrite()->getSite();
-        } catch (QUI\Exception $Exception) {
+        } catch (Exception $Exception) {
             Log::writeException($Exception);
 
             return;
@@ -104,7 +101,8 @@ class EventHandler
         }
 
         // password input
-        if (isset($_POST['site-lock-' . $Site->getId()])
+        if (
+            isset($_POST['site-lock-' . $Site->getId()])
             && isset($_POST['password'])
             && $_POST['password'] == $password
         ) {
@@ -117,9 +115,9 @@ class EventHandler
         }
 
         $Control = new QUI\WebsiteLocker\Controls\SiteLock([
-            'title'           => $Site->getAttribute('quiqqer.website.locker.title'),
-            'description'     => $Site->getAttribute('quiqqer.website.locker.description'),
-            'Site'            => $Site,
+            'title' => $Site->getAttribute('quiqqer.website.locker.title'),
+            'description' => $Site->getAttribute('quiqqer.website.locker.description'),
+            'Site' => $Site,
             'backgroundImage' => $Site->getAttribute('quiqqer.website.locker.background')
         ]);
 
