@@ -40,7 +40,7 @@ class SiteLock extends QUI\Control
     public function getBody(): string
     {
         try {
-            $Engine = \QUI::getTemplateManager()->getEngine();
+            $Engine = QUI::getTemplateManager()->getEngine();
         } catch (Exception $Exception) {
             return '';
         }
