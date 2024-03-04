@@ -9,6 +9,8 @@ use QUI\System\Log;
 use QUI\WebsiteLocker\Controls\WebsiteLocker;
 use Symfony\Component\HttpFoundation\Response;
 
+use function class_exists;
+
 class EventHandler
 {
     protected static ?string $instanceLockPassword = null;
@@ -19,7 +21,7 @@ class EventHandler
      *
      * @return void
      */
-    public static function onRequest(Rewrite $Rewrite, string $url)
+    public static function onRequest(Rewrite $Rewrite, string $url): void
     {
         try {
             $conf = $Rewrite->getProject()->getConfig();
@@ -71,7 +73,7 @@ class EventHandler
     /**
      * @throws Exception
      */
-    public static function onSiteStart()
+    public static function onSiteStart(): void
     {
         try {
             $Site = QUI::getRewrite()->getSite();
@@ -131,9 +133,20 @@ class EventHandler
         exit;
     }
 
+    public static function onProjectConfigSave(string $projectName, array $config, array $sentConfigParams): void
+    {
+        if (!QUI::getPackageManager()->isInstalled('quiqqer/cache')) {
+            return;
+        }
+
+        if (class_exists('QUI\Cache\Handler')) {
+            QUI\Cache\Handler::init()->clearCache();
+        }
+    }
+
     //region user login / logout
 
-    public static function onUserLogoutBegin(QUI\Interfaces\Users\User $User)
+    public static function onUserLogoutBegin(QUI\Interfaces\Users\User $User): void
     {
         $password = QUI::getSession()->get('website-locker-pass');
 
@@ -142,7 +155,7 @@ class EventHandler
         }
     }
 
-    public static function onUserLoginStart()
+    public static function onUserLoginStart(): void
     {
         $password = QUI::getSession()->get('website-locker-pass');
 
@@ -151,14 +164,14 @@ class EventHandler
         }
     }
 
-    public static function onUserLogout(QUI\Interfaces\Users\User $User)
+    public static function onUserLogout(QUI\Interfaces\Users\User $User): void
     {
         if (!empty(self::$instanceLockPassword)) {
             QUI::getSession()->set('website-locker-pass', self::$instanceLockPassword);
         }
     }
 
-    public static function onUserLogin()
+    public static function onUserLogin(): void
     {
         if (!empty(self::$instanceLockPassword)) {
             QUI::getSession()->set('website-locker-pass', self::$instanceLockPassword);
