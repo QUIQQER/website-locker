@@ -5,8 +5,9 @@
 
     <event on="onUserLogout" fire="QUI\WebsiteLocker\EventHandler::onUserLogout"/>
     <event on="onUserLogoutBegin" fire="QUI\WebsiteLocker\EventHandler::onUserLogoutBegin"/>
-
     <event on="onUserLogin" fire="QUI\WebsiteLocker\EventHandler::onUserLogin"/>
     <event on="onUserLoginStart" fire="QUI\WebsiteLocker\EventHandler::onUserLoginStart"/>
     <event on="onUserLoginAjaxStart" fire="QUI\WebsiteLocker\EventHandler::onUserLoginStart"/>
+    
+    <event on="onProjectConfigSave" fire="QUI\WebsiteLocker\EventHandler::onProjectConfigSave"/>
 </events>
