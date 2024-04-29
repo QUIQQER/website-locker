@@ -3,7 +3,6 @@
 namespace QUI\WebsiteLocker\Controls;
 
 use QUI;
-
 use QUI\Exception;
 
 use function dirname;
