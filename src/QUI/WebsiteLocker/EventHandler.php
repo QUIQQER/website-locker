@@ -20,6 +20,7 @@ class EventHandler
      * @param string $url
      *
      * @return void
+     * @throws \Exception
      */
     public static function onRequest(Rewrite $Rewrite, string $url): void
     {
@@ -71,7 +72,7 @@ class EventHandler
     }
 
     /**
-     * @throws Exception
+     * @throws \Exception
      */
     public static function onSiteStart(): void
     {
