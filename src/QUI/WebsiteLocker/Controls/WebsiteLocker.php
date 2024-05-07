@@ -19,15 +19,11 @@ class WebsiteLocker extends Control
 
     /**
      * @return string
+     * @throws Exception
      */
     public function getBody(): string
     {
-        try {
-            $Engine = QUI::getTemplateManager()->getEngine();
-        } catch (Exception $Exception) {
-            return '';
-        }
-
+        $Engine = QUI::getTemplateManager()->getEngine();
         $Site = $this->getSite();
 
         $Engine->assign([
@@ -44,10 +40,10 @@ class WebsiteLocker extends Control
     /**
      * Return the current site
      *
-     * @return false|mixed|QUI\Projects\Site|null
+     * @return QUI\Interfaces\Projects\Site
      * @throws Exception
      */
-    public function getSite()
+    public function getSite(): QUI\Interfaces\Projects\Site
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');

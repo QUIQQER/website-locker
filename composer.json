@@ -1,5 +1,5 @@
 {
-  "name": "quiqqer\/website-locker",
+  "name": "quiqqer/website-locker",
   "type": "quiqqer-module",
   "description": "This module allows you to block frontend access to your project behind password protection. Among other things, you can use it to block crawlers from search engines.",
   "license": "GPL-3.0+",
@@ -7,27 +7,27 @@
     {
       "name": "Gerd Krause",
       "email": "gerd@pcsg.de",
-      "homepage": "http:\/\/www.pcsg.de",
+      "homepage": "https://www.pcsg.de",
       "role": "Developer"
     },
     {
       "name": "Henning Leutz",
       "email": "leutz@pcsg.de",
-      "homepage": "http:\/\/www.pcsg.de",
+      "homepage": "https://www.pcsg.de",
       "role": "Developer"
     }
   ],
   "support": {
     "email": "support@pcsg.de",
-    "url": "http:\/\/www.pcsg.de"
+    "url": "https://www.pcsg.de"
   },
   "require": {
     "php": "^8",
-    "quiqqer\/quiqqer": "^1"
+    "quiqqer/core": "^2"
   },
   "autoload": {
     "psr-4": {
-      "QUI\\WebsiteLocker\\": "src\/QUI\/WebsiteLocker"
+      "QUI\\WebsiteLocker\\": "src/QUI/WebsiteLocker"
     }
   }
 }

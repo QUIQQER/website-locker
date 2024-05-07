@@ -36,15 +36,11 @@ class SiteLock extends QUI\Control
 
     /**
      * @return string
+     * @throws Exception
      */
     public function getBody(): string
     {
-        try {
-            $Engine = QUI::getTemplateManager()->getEngine();
-        } catch (Exception $Exception) {
-            return '';
-        }
-
+        $Engine = QUI::getTemplateManager()->getEngine();
         $Site = $this->getSite();
         $Project = $Site->getProject();
         $logo = '';
@@ -101,9 +97,10 @@ class SiteLock extends QUI\Control
     /**
      * Return the current site
      *
-     * @return false|mixed|QUI\Projects\Site|null
+     * @return QUI\Interfaces\Projects\Site
+     * @throws Exception
      */
-    public function getSite()
+    public function getSite(): QUI\Interfaces\Projects\Site
     {
         if ($this->getAttribute('Site')) {
             return $this->getAttribute('Site');
